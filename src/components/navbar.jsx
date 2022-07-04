@@ -6,8 +6,8 @@ import { Link, useLocation } from "react-router-dom";
 const Navbar = () => {
     const [show, setShow] = useState(false);
     const location = useLocation();
-
     const [width, setWidth] = useState(0);
+
     useEffect(() => {
         const onResize = () => setWidth(window.innerWidth);
         window.addEventListener("resize", onResize);
@@ -24,7 +24,7 @@ const Navbar = () => {
     }, [location]);
 
     return (
-        <div className={"w-full"}>
+        <div className={"w-full fixed top-0 left-0"}>
             <div className=" bg-[bisque] py-6 px-2 md:px-6 duration-500 flex justify-between items-center shadow-xl">
                 <Link to="/">
                     <h1
