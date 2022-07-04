@@ -10,7 +10,7 @@ const Home = () => {
         <div className=" w-full text-center">
             <div
                 className={
-                    "bg-[bisque] md:h-screen h-80 duration-500 mt-16 flex items-center justify-center"
+                    "bg-[bisque] md:h-screen h-80 duration-500 flex items-center justify-center"
                 }
             >
                 <div>

@@ -24,7 +24,7 @@ const Navbar = () => {
     }, [location]);
 
     return (
-        <div className={"w-full fixed top-0 left-0"}>
+        <div className={"w-full fixed top-0 left-0 z-[2]"}>
             <div className=" bg-[bisque] py-6 px-2 md:px-6 duration-500 flex justify-between items-center shadow-xl">
                 <Link to="/">
                     <h1
