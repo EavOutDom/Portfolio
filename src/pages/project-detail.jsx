@@ -33,8 +33,20 @@ const ProjectDetail = () => {
                     {proDetail.skills}
                 </h1>
                 <div className="flex w-20 mx-auto text-3xl justify-between">
-                    <VscOpenPreview />
-                    <AiOutlineGithub />
+                    <a
+                        href={proDetail.urlPre}
+                        target={"_blank"}
+                        rel={"noreferrer"}
+                    >
+                        <VscOpenPreview />
+                    </a>
+                    <a
+                        href={proDetail.urlGit}
+                        target={"_blank"}
+                        rel={"noreferrer"}
+                    >
+                        <AiOutlineGithub />
+                    </a>
                 </div>
             </div>
         </div>

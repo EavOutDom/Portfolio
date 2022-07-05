@@ -1,21 +1,34 @@
 import React from "react";
-import {
-    AiOutlineFacebook,
-    AiOutlineInstagram,
-    AiOutlineLinkedin,
-    AiOutlineMedium,
-} from "react-icons/ai";
+import { link } from "../project-data";
 
 const Footer = () => {
     return (
-        <div className="bg-[bisque] py-4 w-full text-center duration-500 shadow-xl">
-            <div className="w-full flex justify-evenly text-3xl">
-                <AiOutlineFacebook />
-                <AiOutlineInstagram />
-                <AiOutlineLinkedin />
-                <AiOutlineMedium />
+        <div className="bg-yellow-400 py-4 w-full text-center duration-500 shadow-xl">
+            <div
+                className={
+                    "grid grid-cols-2 items-start text-start px-2 md:px-6 sm:w-9/12 mx-auto duration-500"
+                }
+            >
+                <div>
+                    <h1>eavoutdom400@gmail.com</h1>
+                    <h1>+855 99 789 551</h1>
+                </div>
+                <div className="w-3/4 mx-auto duration-500 flex justify-evenly text-3xl">
+                    {link.map((data, index) => {
+                        return (
+                            <a
+                                key={index}
+                                href={data.url}
+                                target={"_blank"}
+                                rel={"noreferrer"}
+                            >
+                                {data.icon}
+                            </a>
+                        );
+                    })}
+                </div>
             </div>
-            <p className={""}> &copy; 2022 eavoutdom.com </p>
+            <p className={"my-2"}> &copy; 2022 eavoutdom.com </p>
         </div>
     );
 };

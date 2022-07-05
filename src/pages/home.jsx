@@ -1,16 +1,16 @@
 import React from "react";
-import {
-    AiOutlineGithub,
-    AiOutlineMail,
-    AiOutlineLinkedin,
-} from "react-icons/ai";
+// import {
+//     AiOutlineGithub,
+//     AiOutlineMail,
+//     AiOutlineLinkedin,
+// } from "react-icons/ai";
 
 const Home = () => {
     return (
         <div className=" w-full text-center">
             <div
                 className={
-                    "bg-[bisque] md:h-screen h-80 duration-500 flex items-center justify-center"
+                    "bg-[bisque] h-screen duration-500 flex items-center justify-center"
                 }
             >
                 <div>
@@ -21,11 +21,22 @@ const Home = () => {
                     >
                         Hi, My name is Eav Outdom
                     </h1>
-                    <p className="md:text-lg duration-500 my-6">
-                        A front-end developer with a passion for learning and
-                        creating.
-                    </p>
-                    <div className={"w-3/12 mx-auto"}>
+                    <div className="mx-auto w-3/4 text-start">
+                        <p className="md:text-lg duration-500 mt-6">
+                            A front-end developer with a passion for learning
+                            and creating.
+                        </p>
+                        <p className="md:text-lg duration-500 my-4">
+                            Well-organised person with a strong sense of
+                            responsibility and a strong desire to learn and
+                            grow.
+                        </p>
+                        <p className="md:text-lg duration-500 mb-6">
+                            Interested in the entire frontend spectrum and
+                            working on ambitious projects with positive people.
+                        </p>
+                    </div>
+                    {/* <div className={"w-3/12 mx-auto"}>
                         <div
                             className={
                                 "flex justify-evenly md:text-3xl duration-500 text-2xl"
@@ -35,7 +46,7 @@ const Home = () => {
                             <AiOutlineMail />
                             <AiOutlineLinkedin />
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div>
