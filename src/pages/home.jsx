@@ -35,7 +35,7 @@ const Home = () => {
                     >
                         Hi, My name is Eav Outdom
                     </h1>
-                    <div className="mx-auto w-3/4 text-start">
+                    <div className="mx-auto w-3/4 text-center">
                         <p className="md:text-lg duration-500 mt-6">
                             A front-end developer with a passion for learning
                             and creating.

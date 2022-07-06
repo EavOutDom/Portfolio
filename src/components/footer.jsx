@@ -13,7 +13,7 @@ const Footer = () => {
                     <h1>eavoutdom400@gmail.com</h1>
                     <h1>+855 99 789 551</h1>
                 </div>
-                <div className="w-3/4 mx-auto duration-500 flex justify-evenly text-3xl">
+                <div className="w-full sm:w-3/4 mx-auto duration-500 flex sm:justify-evenly justify-end text-3xl">
                     {link.map((data, index) => {
                         return (
                             <a
@@ -28,7 +28,7 @@ const Footer = () => {
                     })}
                 </div>
             </div>
-            <p className={"my-2"}> &copy; 2022 eavoutdom.com </p>
+            <p className={"my-2 font-semibold text-sm"}> &copy; 2022 EAVOUTDOM </p>
         </div>
     );
 };
