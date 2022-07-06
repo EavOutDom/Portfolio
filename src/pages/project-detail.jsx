@@ -21,12 +21,14 @@ const ProjectDetail = () => {
                     "h-1 mx-auto w-28 bg-[bisque] md:w-32 my-1 duration-500"
                 }
             ></div>
-            <div className="mb-44 mt-32 px-2 md:px-8">
-                <div className="w-9/12 md:h-96 flex justify-center mx-auto shadow-2xl">
+            <div className="mb-44 mt-32 px-2 md:px-16 duration-500">
+                <div className="flex justify-center mx-auto">
                     <img
                         src={proDetail.img}
                         alt={"proDetail.name"}
-                        className={"object-cover"}
+                        className={"w-full h-auto shadow-2xl"}
+                        width={'600'}
+                        height={'400'}
                     />
                 </div>
                 <h1 className="text-center font-semibold my-8 md:my-16">
