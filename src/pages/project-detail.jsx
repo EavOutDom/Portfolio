@@ -22,7 +22,7 @@ const ProjectDetail = () => {
                 }
             ></div>
             <div className="mb-44 mt-32 px-2 md:px-16 duration-500">
-                <div className="flex justify-center mx-auto">
+                <div className="">
                     <img
                         src={proDetail.img}
                         alt={"proDetail.name"}
