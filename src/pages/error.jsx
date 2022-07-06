@@ -13,7 +13,7 @@ const Error = () => {
             <h1 className={"my-2"}>
                 Maybe the URL is incorrect, or the page no longer exist.
             </h1>
-            <Link to={"/"}>
+            <Link to={"/Portfolio/"}>
                 <button
                     className={"my-2 border-2 border-black p-4 bg-[bisque]"}
                 >
