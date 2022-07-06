@@ -5,7 +5,7 @@ const Project = ({ id, name, img }) => {
     return (
         <div
             className={
-                "w-60 h-60 shadow-xl md:hover:shadow-2xl rounded-md my-4 md:hover:scale-[1.2] transition-all delay-300 hover:transition-all hover:delay-300"
+                "w-60 h-60 shadow-xl md:hover:shadow-2xl rounded-md my-4 md:hover:scale-[1.1] transition-all duration-300 hover:transition-all hover:duration-300"
             }
         >
             <Link to={`/projects/${id}`}>

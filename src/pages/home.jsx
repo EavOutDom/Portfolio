@@ -1,11 +1,25 @@
-import React from "react";
-// import {
-//     AiOutlineGithub,
-//     AiOutlineMail,
-//     AiOutlineLinkedin,
-// } from "react-icons/ai";
+import React, { useEffect, useState } from "react";
+import { link } from "../project-data";
 
 const Home = () => {
+    const [opacity, setOpacity] = useState(1);
+
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            const onScroll = () => {
+                if (window.scrollY > 0) {
+                    setOpacity(0);
+                } else {
+                    setOpacity(1);
+                }
+            };
+            window.addEventListener("scroll", onScroll);
+            return () => {
+                window.removeEventListener("scroll", onScroll);
+            };
+        }
+    }, [opacity]);
+
     return (
         <div className=" w-full text-center">
             <div
@@ -35,18 +49,22 @@ const Home = () => {
                             Interested in the entire frontend spectrum and
                             working on ambitious projects with positive people.
                         </p>
-                    </div>
-                    {/* <div className={"w-3/12 mx-auto"}>
-                        <div
-                            className={
-                                "flex justify-evenly md:text-3xl duration-500 text-2xl"
-                            }
-                        >
-                            <AiOutlineGithub />
-                            <AiOutlineMail />
-                            <AiOutlineLinkedin />
+                        <div className="w-3/4 mx-auto duration-500 flex justify-evenly text-3xl">
+                            {link.map((data, index) => {
+                                return (
+                                    <a
+                                        style={{ opacity: `${opacity}` }}
+                                        key={index}
+                                        href={data.url}
+                                        target={"_blank"}
+                                        rel={"noreferrer"}
+                                    >
+                                        {data.icon}
+                                    </a>
+                                );
+                            })}
                         </div>
-                    </div> */}
+                    </div>
                 </div>
             </div>
             <div>

@@ -30,7 +30,7 @@ const ProjectDetail = () => {
                     />
                 </div>
                 <h1 className="text-center font-semibold my-8 md:my-16">
-                    {proDetail.skills}
+                    <span className={'font-bold text-lg'}>SKILLS:{" "}</span>{proDetail.skills}
                 </h1>
                 <div className="flex w-20 mx-auto text-3xl justify-between">
                     <a
