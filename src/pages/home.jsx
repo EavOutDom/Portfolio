@@ -5,11 +5,24 @@ import { useInView } from "react-intersection-observer";
 const Home = () => {
     const [opacity, setOpacity] = useState(1);
     const { ref, inView } = useInView({
-        threshold: 0.22,
-
-
+        threshold: 0.5,
     });
     const animation = useAnimation();
+
+    const boxVariants = {
+        hidden: { y: 150, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: {
+                duration: 0.75,
+                type: "spring",
+                bounce: 0.5,
+            },
+        },
+    };
+
+    
     useEffect(() => {
         if (typeof window !== "undefined") {
             const onScroll = () => {
@@ -34,7 +47,7 @@ const Home = () => {
                 transition: {
                     duration: 1,
                     type: "spring",
-                    bounce: 0.3,
+                    bounce: 0.2,
                 },
             });
         } else {
@@ -56,7 +69,11 @@ const Home = () => {
                     "bg-[bisque] h-screen duration-500 flex items-center justify-center"
                 }
             >
-                <div>
+                <motion.div
+                    initial={"hidden"}
+                    animate={"visible"}
+                    variants={boxVariants}
+                >
                     <h1
                         className={
                             "text-[#001B3B] md:text-4xl duration-500 text-xl font-bold"
@@ -94,7 +111,7 @@ const Home = () => {
                             })}
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
             <h1
                 className={
