@@ -58,7 +58,7 @@ const Navbar = () => {
             } left-0 z-[2] transition-all duration-500`}
         >
             <div className=" bg-yellow-400 h-24 px-2 md:px-16 duration-500 flex justify-between items-center shadow-xl">
-                <Link to="Portfolio/">
+                <Link to="/">
                     <h1
                         className={
                             "md:text-2xl text-xl duration-500 font-semibold"
@@ -74,13 +74,13 @@ const Navbar = () => {
                             : "md:flex items-center md:visible hidden uppercase duration-500"
                     }
                 >
-                    <Link to={"Portfolio/"}>
+                    <Link to={"/"}>
                         <h3>Home</h3>
                     </Link>
-                    <Link to={"Portfolio/projects"}>
+                    <Link to={"/projects"}>
                         <h3>Projects</h3>
                     </Link>
-                    <Link to={"Portfolio/experiences"}>
+                    <Link to={"/experiences"}>
                         <h3>Experiences</h3>
                     </Link>
                 </div>

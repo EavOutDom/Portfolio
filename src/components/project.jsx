@@ -8,7 +8,7 @@ const Project = ({ id, name, img }) => {
                 "w-60 h-60 shadow-xl md:hover:shadow-2xl rounded-md my-4 md:hover:scale-[1.1] transition-all duration-300 hover:transition-all hover:duration-300"
             }
         >
-            <Link to={`/Portfolio/projects/${id}`}>
+            <Link to={`/projects/${id}`}>
                 <img
                     src={img}
                     alt={name}
