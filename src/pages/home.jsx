@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { link } from "../project-data";
-
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 const Home = () => {
     const [opacity, setOpacity] = useState(1);
+    const { ref, inView } = useInView({
+        threshold: 0.22,
 
+
+    });
+    const animation = useAnimation();
     useEffect(() => {
         if (typeof window !== "undefined") {
             const onScroll = () => {
@@ -19,6 +25,29 @@ const Home = () => {
             };
         }
     }, [opacity]);
+
+    useEffect(() => {
+        console.log(inView);
+        if (inView) {
+            animation.start({
+                x: 0,
+                transition: {
+                    duration: 1,
+                    type: "spring",
+                    bounce: 0.3,
+                },
+            });
+        } else {
+            animation.start({
+                x: "-100vw",
+                // transition: {
+                //     duration: 1,
+                //     type: "spring",
+                //     bounce: 0.3,
+                // },
+            });
+        }
+    }, [inView, animation]);
 
     return (
         <div className=" w-full text-center">
@@ -67,19 +96,18 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div>
-                <h1
-                    className={
-                        "uppercase md:text-4xl duration-500 text-xl font-bold text-[#001B3B] mt-8"
-                    }
-                >
-                    skills
-                </h1>
-                <div
-                    className={
-                        "mx-auto w-20 h-1 bg-[bisque] duration-500 md:w-36"
-                    }
-                ></div>
+            <h1
+                className={
+                    "uppercase md:text-4xl duration-500 text-xl font-bold text-[#001B3B] mt-8"
+                }
+            >
+                skills
+            </h1>
+            <div
+                ref={ref}
+                className={"mx-auto w-20 h-1 bg-[bisque] duration-500 md:w-36"}
+            ></div>
+            <motion.div animate={animation}>
                 <h1
                     className={
                         "uppercase md:text-3xl duration-500 text-lg font-bold text-[#001B3B] mt-10 mb-6"
@@ -99,7 +127,7 @@ const Home = () => {
                     Languages
                 </h1>
                 <p className={"mt-2, mb-36"}>JavaScript, Java, C, C++, C#</p>
-            </div>
+            </motion.div>
         </div>
     );
 };
