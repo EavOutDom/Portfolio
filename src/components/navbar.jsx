@@ -3,10 +3,37 @@ import { FaBars } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
 import { Link, useLocation } from "react-router-dom";
 
+const navItems = [
+    {
+        name: "Home",
+        link: "/",
+    },
+    {
+        name: "Projects",
+        link: "/projects",
+    },
+    {
+        name: "Experiences",
+        link: "/experiences",
+    },
+];
+
+function useStickyState(defaultValue, key) {
+    const [value, setValue] = useState(() => {
+        const stickyValue = window.localStorage.getItem(key);
+        return stickyValue !== null ? JSON.parse(stickyValue) : defaultValue;
+    });
+    useEffect(() => {
+        window.localStorage.setItem(key, JSON.stringify(value));
+    }, [key, value]);
+    return [value, setValue];
+}
+
 const Navbar = () => {
     const [show, setShow] = useState(false);
     const location = useLocation();
     const [width, setWidth] = useState(0);
+    const [value, setValue] = useStickyState(0, "value");
 
     useEffect(() => {
         const onResize = () => setWidth(window.innerWidth);
@@ -61,7 +88,7 @@ const Navbar = () => {
                 <Link to="/">
                     <h1
                         className={
-                            "md:text-2xl text-xl duration-500 font-semibold"
+                            "md:text-2xl text-xl duration-500 font-bold uppercase"
                         }
                     >
                         Eav Outdom
@@ -74,15 +101,23 @@ const Navbar = () => {
                             : "md:flex items-center md:visible hidden uppercase duration-500"
                     }
                 >
-                    <Link to={"/"}>
-                        <h3>Home</h3>
-                    </Link>
-                    <Link to={"/projects"}>
-                        <h3>Projects</h3>
-                    </Link>
-                    <Link to={"/experiences"}>
-                        <h3>Experiences</h3>
-                    </Link>
+                    {navItems.map((item, index) => {
+                        return (
+                            <Link
+                                key={index}
+                                to={item.link}
+                                onClick={() => setValue(index)}
+                            >
+                                <h3
+                                    className={`${
+                                        value === index && "text-white underline underline-offset-8"
+                                    }`}
+                                >
+                                    {item.name}
+                                </h3>
+                            </Link>
+                        );
+                    })}
                 </div>
                 <div
                     className="md:hidden"

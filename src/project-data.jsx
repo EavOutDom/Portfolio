@@ -23,7 +23,7 @@ export const projectData = [
     {
         name: "Grocery",
         img: pr2,
-        skills: "ReactJS, Redux-Toolkit, TailwindCSS",
+        skills: "ReactJS, TailwindCSS",
         urlGit: "https://github.com/EavOutDom/Grocery-Bud",
         urlPre: "https://eavoutdom.github.io/Grocery-Bud/",
     },
