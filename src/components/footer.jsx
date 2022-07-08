@@ -17,6 +17,7 @@ const Footer = () => {
                     {link.map((data, index) => {
                         return (
                             <a
+                                className={'md:hover:scale-[1.2] duration-300'}
                                 key={index}
                                 href={data.url}
                                 target={"_blank"}

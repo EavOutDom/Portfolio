@@ -94,6 +94,7 @@ const Home = () => {
                             {link.map((data, index) => {
                                 return (
                                     <a
+                                        className={"md:hover:scale-[1.2] duration-300"}
                                         style={{ opacity: `${opacity}` }}
                                         key={index}
                                         href={data.url}

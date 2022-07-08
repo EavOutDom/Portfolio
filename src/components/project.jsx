@@ -23,6 +23,7 @@ const Project = ({ id, name, img }) => {
         },
     };
     return (
+        <div className="md:hover:scale-[1.05] duration-300">
         <motion.div
             ref={ref}
             initial="hidden"
@@ -41,6 +42,7 @@ const Project = ({ id, name, img }) => {
                 <div className={"py-4 text-center font-bold"}>{name}</div>
             </Link>
         </motion.div>
+        </div>
     );
 };
 

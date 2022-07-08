@@ -76,7 +76,7 @@ const Navbar = () => {
                 <Link to="/">
                     <h1
                         className={
-                            "md:text-2xl text-xl duration-500 font-bold uppercase"
+                            "md:text-2xl text-xl duration-500 font-bold uppercase md:hover:scale-[1.1]"
                         }
                     >
                         Eav Outdom
@@ -94,6 +94,7 @@ const Navbar = () => {
                             <NavLink
                                 key={index}
                                 to={item.link}
+                                className={'md:hover:scale-[1.15] duration-500'}
                                 style={({ isActive }) => {
                                     return {
                                         color: isActive && "white",
