@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaBars } from "react-icons/fa";
 import { ImCross } from "react-icons/im";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 const navItems = [
     {
@@ -18,22 +18,10 @@ const navItems = [
     },
 ];
 
-function useStickyState(defaultValue, key) {
-    const [value, setValue] = useState(() => {
-        const stickyValue = window.localStorage.getItem(key);
-        return stickyValue !== null ? JSON.parse(stickyValue) : defaultValue;
-    });
-    useEffect(() => {
-        window.localStorage.setItem(key, JSON.stringify(value));
-    }, [key, value]);
-    return [value, setValue];
-}
-
 const Navbar = () => {
     const [show, setShow] = useState(false);
     const location = useLocation();
     const [width, setWidth] = useState(0);
-    const [value, setValue] = useStickyState(0, "value");
 
     useEffect(() => {
         const onResize = () => setWidth(window.innerWidth);
@@ -103,24 +91,25 @@ const Navbar = () => {
                 >
                     {navItems.map((item, index) => {
                         return (
-                            <Link
+                            <NavLink
                                 key={index}
                                 to={item.link}
-                                onClick={() => setValue(index)}
+                                style={({ isActive }) => {
+                                    return {
+                                        color: isActive && "white",
+                                        textDecorationLine:
+                                            isActive && "underline",
+                                        textUnderlineOffset: isActive && "8px",
+                                    };
+                                }}
                             >
-                                <h3
-                                    className={`${
-                                        value === index && "text-white underline underline-offset-8"
-                                    }`}
-                                >
-                                    {item.name}
-                                </h3>
-                            </Link>
+                                <h3>{item.name}</h3>
+                            </NavLink>
                         );
                     })}
                 </div>
                 <div
-                    className="md:hidden"
+                    className="md:hidden und"
                     onClick={() => {
                         setShow(!show);
                     }}
