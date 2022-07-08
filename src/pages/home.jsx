@@ -15,14 +15,13 @@ const Home = () => {
             y: 0,
             opacity: 1,
             transition: {
-                duration: 0.75,
+                duration: 1.5,
                 type: "spring",
                 bounce: 0.5,
             },
         },
     };
 
-    
     useEffect(() => {
         if (typeof window !== "undefined") {
             const onScroll = () => {
@@ -40,24 +39,20 @@ const Home = () => {
     }, [opacity]);
 
     useEffect(() => {
-        console.log(inView);
+        // console.log(inView);
         if (inView) {
             animation.start({
                 x: 0,
                 transition: {
-                    duration: 1,
+                    duration: 1.5,
                     type: "spring",
-                    bounce: 0.2,
+                    delay: 0.2,
+                    bounce: 0.5,
                 },
             });
         } else {
             animation.start({
                 x: "-100vw",
-                // transition: {
-                //     duration: 1,
-                //     type: "spring",
-                //     bounce: 0.3,
-                // },
             });
         }
     }, [inView, animation]);
