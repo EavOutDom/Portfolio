@@ -1,30 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { motion, useAnimation } from "framer-motion";
-// import { useInView } from "react-intersection-observer";
 const Project = ({ id, name, img }) => {
-    // const controls = useAnimation();
-    // const [ref, inView] = useInView();
-
-    // const animation = {
-    //     hidden: { x: -200 },
-    //     visible: {
-    //         x: 0,
-    //         transition: {
-    //             duration: 0.5,
-    //             type: "spring",
-    //             bounce: 1,
-    //             delay: 0.2,
-    //         },
-    //     },
-    // };
-
-    // useEffect(() => {
-    //     if (inView) {
-    //         controls.start("visible");
-    //     }
-    // }, [controls, inView]);
-    
     return (
         <div className="md:hover:scale-[1.05] duration-300">
         <div
