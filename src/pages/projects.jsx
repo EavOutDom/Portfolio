@@ -1,30 +1,7 @@
-import { motion, useAnimation } from "framer-motion";
-import React, { useEffect } from "react";
-import { useInView } from "react-intersection-observer";
+import React from 'react';
 import Project from "../components/project";
 import { projectData } from "../project-data";
 const Projects = () => {
-    const controls = useAnimation();
-    const [ref, inView] = useInView();
-
-    const animation = {
-        hidden: { y: 150, opacity: 0 },
-        visible: {
-            y: 0,
-            opacity: 1,
-            transition: {
-                duration: 0.1,
-                type: "spring",
-                bounce: 1,
-            },
-        },
-    };
-
-    useEffect(() => {
-        if (inView) {
-            controls.start("visible");
-        }
-    }, [controls, inView]);
     return (
         <div className="mt-20 mb-44">
             <h1 className="mt-32 text-center font-semibold md:text-3xl text-xl duration-500">
@@ -35,10 +12,7 @@ const Projects = () => {
                     "h-1 mx-auto w-40 bg-[bisque] md:w-56 my-1 duration-500"
                 }
             ></div>
-            <motion.div ref={ref}
-            initial="hidden"
-            animate={controls}
-            variants={animation} className="sm:grid sm:grid-cols-2 sm:w-[75vw] lg:w-[50vw] duration-500 grid-flow-row mx-auto justify-items-center items-center gap-2 px-2 flex justify-center flex-col my-20">
+            <div className="sm:grid sm:grid-cols-2 sm:w-[75vw] lg:w-[50vw] duration-500 grid-flow-row mx-auto justify-items-center items-center gap-2 px-2 flex justify-center flex-col my-20">
                 {projectData.map((data, index) => {
                     return (
                         <Project
@@ -49,7 +23,7 @@ const Projects = () => {
                         />
                     );
                 })}
-            </motion.div>
+            </div>
         </div>
     );
 };
