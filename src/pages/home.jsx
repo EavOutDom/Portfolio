@@ -44,10 +44,10 @@ const Home = () => {
             animation.start({
                 x: 0,
                 transition: {
-                    duration: 1.5,
+                    duration: 2,
                     type: "spring",
                     delay: 0.2,
-                    bounce: 0.5,
+                    bounce: 0.3,
                 },
             });
         } else {
